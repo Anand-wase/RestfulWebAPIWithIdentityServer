@@ -102,8 +102,7 @@ public class Index : PageModel
 
         if (ModelState.IsValid)
         {
-            var result = await _signInManager.PasswordSignInAsync
-                (Input.Username, Input.Password,Input.RememberLogin,lockoutOnFailure: false);
+            var result = await _signInManager.PasswordSignInAsync(Input.Username, Input.Password,Input.RememberLogin,lockoutOnFailure: false);
             // validate username/password against in-memory store
             if (result.Succeeded)
             {
